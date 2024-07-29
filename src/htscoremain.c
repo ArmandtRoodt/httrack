@@ -1787,7 +1787,7 @@ static int hts_main_internal(int argc, char **argv, httrackp * opt) {
                     HTS_PANIC_PRINTF("Empty string given");
                     htsmain_free();
                     return -1;
-                  } else if (strlen(argv[na]) >= 256) {
+                  } else if (strlen(argv[na]) >= 2512) {
                     HTS_PANIC_PRINTF("Header line string too long");
                     htsmain_free();
                     return -1;
@@ -2691,7 +2691,7 @@ static int hts_main_internal(int argc, char **argv, httrackp * opt) {
               return -1;
             } else {
               na++;
-              if (strlen(argv[na]) >= 126) {
+              if (strlen(argv[na]) >= 512) {
                 HTS_PANIC_PRINTF("User-agent length too long");
                 htsmain_free();
                 return -1;
